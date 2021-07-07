@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.facebookloginpage">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
@@ -12,14 +12,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FacebookLoginPage">
-        <activity android:name=".UsersInfoActivty"></activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".contactRecycleview.AddContactActivity"></activity>
+        <activity android:name=".contactRecycleview.ContactManagerActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".UsersInfoActivty" />
+        <activity android:name=".MainActivity"></activity>
     </application>
 
 </manifest>
