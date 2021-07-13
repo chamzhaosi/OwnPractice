@@ -12,15 +12,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FacebookLoginPage">
-        <activity android:name=".contactRecycleview.AddContactActivity"></activity>
+        <activity android:name=".contactRecycleview.EditContactViewActivity"></activity>
+        <activity android:name=".contactRecycleview.AddContactActivity" />
         <activity android:name=".contactRecycleview.ContactManagerActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity android:name=".UsersInfoActivty" />
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>

@@ -43,7 +43,6 @@ public class ContactManagerActivity extends AppCompatActivity {
             Intent i = new Intent(this, AddContactActivity.class);
             startActivity(i);
         });
-
     }
 
     public void initiaRecycleView(){

@@ -1,9 +1,11 @@
 package com.example.facebookloginpage.contactRecycleview;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -39,6 +41,14 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ViewHold
 
         holder.tvName.setText(contact.getName());
         holder.tvNumber.setText(contact.getPhoneNumber());
+        holder.rootLayout.setOnClickListener(view->{
+            //pass to the editContactView activity
+            Intent i  = new Intent(context, EditContactViewActivity.class);
+            i.putExtra(EditContactViewActivity.KEY_ID, contact.getId());
+            i.putExtra(EditContactViewActivity.KEY_NAME, contact.getName());
+            i.putExtra(EditContactViewActivity.KEY_NUMBER, contact.getPhoneNumber());
+            context.startActivity(i);
+        });
     }
 
     @Override
@@ -54,12 +64,14 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ViewHold
 
     public class ViewHolder extends RecyclerView.ViewHolder{
         public TextView tvName, tvNumber;
+        public LinearLayout rootLayout;
 
         public  ViewHolder(View itemView){
             super(itemView);
 
             tvName = itemView.findViewById(R.id.tvName);
             tvNumber = itemView.findViewById(R.id.tvNumber);
+            rootLayout = itemView.findViewById(R.id.single_root_layout);
         }
     }
 }

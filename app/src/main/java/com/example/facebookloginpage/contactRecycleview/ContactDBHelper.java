@@ -81,12 +81,12 @@ public class ContactDBHelper extends SQLiteOpenHelper {
     public void updateContact(Contact contact){
         SQLiteDatabase db = getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put("COLUMN_NAME", contact.getName());
-        contentValues.put("COLUMN_NUMBER", contact.getPhoneNumber());
+        contentValues.put(COLUMN_NAME, contact.getName());
+        contentValues.put(COLUMN_NUMBER, contact.getPhoneNumber());
 
         String stringId = Integer.toString(contact.getId());
 
-        db.update("TABLE_NAME", contentValues, "id=" + stringId, null);
+        db.update(TABLE_NAME, contentValues, "id=" + stringId, null);
     }
 
     //Delete keyword:delete
@@ -94,6 +94,6 @@ public class ContactDBHelper extends SQLiteOpenHelper {
         String stringId = Integer.toString(id);
 
         SQLiteDatabase db = getWritableDatabase();
-        db.delete("TABLE_NAME", "id=" + stringId, null);
+        db.delete(TABLE_NAME, "id=" + stringId, null);
     }
 }
