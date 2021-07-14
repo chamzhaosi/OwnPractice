@@ -1,4 +1,4 @@
-package com.example.facebookloginpage.contactRecycleview;
+package com.example.facebookloginpage.SQLiteDatabashHelper;
 
 import androidx.appcompat.app.AppCompatActivity;
 

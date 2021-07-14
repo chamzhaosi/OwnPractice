@@ -1,4 +1,4 @@
-package com.example.facebookloginpage.contactRecycleview;
+package com.example.facebookloginpage.SQLiteDatabashHelper;
 
 public class Contact {
     private int id;
