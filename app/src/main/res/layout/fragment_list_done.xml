@@ -4,15 +4,32 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".ToDoList.ListDoneFragment">
 
     <TextView
+        android:id="@+id/tvCompleteTaskTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Task Complete"
+        android:textSize="30sp"
+        android:gravity="center_horizontal"
+        tools:ignore="MissingConstraints"
+        android:background="#b37a68"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/tvCompleteTaskTitle"
+        tools:ignore="MissingConstraints" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycleCompleteTask"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Welcome to my done list"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        tools:listitem="@layout/single_row_complete_task"
+        app:layout_constraintTop_toBottomOf="@id/tvCompleteTaskTitle"
+        tools:ignore="MissingConstraints" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

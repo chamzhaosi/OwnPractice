@@ -12,6 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FacebookLoginPage">
+        <activity android:name=".ToDoList.Edit_Delete_ToDoListActivity"></activity>
         <activity android:name=".ToDoList.BottomMenuActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,10 +22,10 @@
         </activity>
         <activity android:name=".SQLiteDatabashHelper.EditContactViewActivity" />
         <activity android:name=".SQLiteDatabashHelper.AddContactActivity" />
-        <activity android:name=".SQLiteDatabashHelper.ContactManagerActivity"></activity>
+        <activity android:name=".SQLiteDatabashHelper.ContactManagerActivity" />
         <activity android:name=".RoomDAO.EditContactView2Activity" />
         <activity android:name=".RoomDAO.AddContact2Activity" />
-        <activity android:name=".RoomDAO.ContactManager2Activity"></activity>
+        <activity android:name=".RoomDAO.ContactManager2Activity" />
         <activity android:name=".UsersInfoActivty" />
         <activity android:name=".MainActivity" />
     </application>

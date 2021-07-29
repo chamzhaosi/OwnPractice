@@ -25,6 +25,7 @@ public class ListUndoFragment extends Fragment {
     private RecyclerView recyclerView;
     private View view;
     private TextView tvMessage;
+    private ToDoListDAO toDoListDAO;
 
     public ListUndoFragment() {
     }
@@ -35,9 +36,16 @@ public class ListUndoFragment extends Fragment {
         // Inflate the layout for this fragment
         //return inflater.inflate(R.layout.fragment_list_undo, container, false);
         view = inflater.inflate(R.layout.fragment_list_undo, container, false);
+        toDoListDAO = ToDoListDatabase.getInstance(view.getContext()).ToDoListDAO();
         findview();
         initialRecycleList();
         return view;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        refreshAdapter();
     }
 
     public void findview(){
@@ -53,11 +61,33 @@ public class ListUndoFragment extends Fragment {
 //        toDoLists.add(new ToDoList("Read a Book", "Read a story book << My parent>>", "28-July-2021"));
 //        toDoLists.add(new ToDoList("Read a Book", "Read a story book << My mouse>>", "28-July-2021"));
 //        toDoLists.add(new ToDoList("Read a Book", "Read a story book << My pet>>", "28-July-2021"));
-            if (toDoLists.isEmpty()){
-                tvMessage.setText("Please add you first task!!");
-            }
+
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    List<ToDoList> checkList = toDoListDAO.getAllTasks();
+                    if (checkList.isEmpty()){
+                        tvMessage.setText("Please add you first task!!");
+                    }
+                }
+            }).start();
         adapter = new ToDoListAdapter(view.getContext(), toDoLists);
         recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
         recyclerView.setAdapter(adapter);
+    }
+
+    private void refreshAdapter(){
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                List<ToDoList> toDoLists = toDoListDAO.getAllTasks();
+                getActivity().runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        adapter.updateToDoList(toDoLists);
+                    }
+                });
+            }
+        }).start();
     }
 }

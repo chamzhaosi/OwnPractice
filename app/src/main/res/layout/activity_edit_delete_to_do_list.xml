@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ToDoList.Edit_Delete_ToDoListActivity"
+    android:orientation="vertical"
+    android:gravity="center_horizontal">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Edit / Delete an task"
+        android:textStyle="bold"
+        android:textSize="35sp"
+        android:background="#7fdbb5"
+        android:gravity="center_horizontal"/>
+
+    <EditText
+        android:id="@+id/edtSubjectLine_EDActivity"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:hint="Subject Line"
+        android:textSize="25sp"
+        android:layout_marginTop="10dp"/>
+
+    <EditText
+        android:id="@+id/edtDueDate_EDActivity"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:hint="Due Date"
+        android:textSize="25sp"
+        android:layout_marginTop="10dp"/>
+
+    <EditText
+        android:id="@+id/edtDetail_EDActivity"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:hint="Detail"
+        android:textSize="25sp"
+        android:layout_marginTop="10dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp">
+
+        <Button
+            android:id="@+id/btnSave_EDActivity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Save"
+            android:textSize="17dp"
+            android:layout_weight="1"
+            android:layout_marginEnd="5dp"
+            android:backgroundTint="#64e332"
+            android:textColor="@color/black"/>
+
+        <Button
+            android:id="@+id/btnDelete_EDActivity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Detele"
+            android:textSize="17dp"
+            android:layout_weight="1"
+            android:layout_marginStart="5dp"
+            android:backgroundTint="#eb4034"
+            android:textColor="@color/black"/>
+
+
+    </LinearLayout>
+
+</LinearLayout>

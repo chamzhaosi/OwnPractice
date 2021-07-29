@@ -14,9 +14,9 @@ public abstract class ToDoListDatabase extends RoomDatabase {
     private static ToDoListDatabase instance;
 
     public static synchronized ToDoListDatabase getInstance(Context context){
-        if (instance != null){
+        if (instance == null){
             instance = Room.databaseBuilder(context.getApplicationContext(), ToDoListDatabase.class, DATABASE_NAME)
-                    .fallbackToDestructiveMigrationOnDowngrade()
+                    .fallbackToDestructiveMigration()
                     .build();
         }
         return instance;

@@ -7,12 +7,64 @@
     tools:context=".ToDoList.ListAddFragment">
 
     <TextView
+        android:id="@+id/tvAddTask"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Welcome to my add list"
+        android:text="Add Task"
+        android:textSize="30sp"
+        android:textStyle="bold"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.059"/>
+
+    <EditText
+        android:id="@+id/edtSubjectLine"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:hint="Subject Line"
+        android:textSize="20dp"
+        app:layout_constraintTop_toBottomOf="@id/tvAddTask"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.03"/>
+
+    <EditText
+        android:id="@+id/edtDueDate"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:hint="Due Date"
+        android:textSize="20dp"
+        app:layout_constraintTop_toBottomOf="@id/edtSubjectLine"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0"/>
+
+    <EditText
+        android:id="@+id/edtDetail"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:hint="Detial"
+        android:textSize="20dp"
+        app:layout_constraintTop_toBottomOf="@id/edtDueDate"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0"/>
+
+    <Button
+        android:id="@+id/btnSaveTask"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="save"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/edtDetail"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.05"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
